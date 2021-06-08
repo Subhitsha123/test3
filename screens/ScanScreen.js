@@ -44,15 +44,19 @@ export default class ScanScreen extends React.Component{
     else if(buttonState === 'normal'){
         return(
             <View style = {styles.container}>
+                <View>
+                <Image source = {require("./assets/scannerimg.jpg")}
+                style={{width="500" ,height="600"}}/>
+               
                 <Text style = {styles.displayText}>
                     {hasCameraPermissions === true? this.scannedData: "Request Camera Permission"}
                 </Text>
-
+                </View>
                 <TouchableOpacity onPress = {this.getCameraPermission}
                 style = {styles.scanButton}
                 title = "Bar Code Scanner">
                     <Text style = {styles.buttonText}>SCAN THE QR CODE</Text>
-                    <img src = "./assets/scannerimg.jpg"width="500" height="600"/>
+                    
                 </TouchableOpacity>
             </View>
         )
